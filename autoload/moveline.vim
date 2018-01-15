@@ -8,8 +8,12 @@ let g:loaded_moveline = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-function! moveline#moveline()
-  echo "line move!"
+function! moveline#up()
+  :execute ":normal ddkkp"
+endfunction
+
+function! moveline#down()
+  :execute ":normal ddp"
 endfunction
 
 let &cpo = s:save_cpo
