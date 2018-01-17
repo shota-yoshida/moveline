@@ -9,7 +9,12 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 function! moveline#up()
-  :execute ":normal ddkkp"
+  if line('.') == "1"
+  elseif line('.') == line('$')
+    :execute ":normal ddkp"
+  else
+    :execute ":normal ddk\<S-p>"
+  endif
 endfunction
 
 function! moveline#down()
